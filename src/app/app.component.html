@@ -1,0 +1,58 @@
+
+<img src="https://www.91-img.com/pictures/laptops/apple/apple-pro-macbook-pro-16-ultrabook-core-i7-9th-gen-16-gb-1-tb-ssd-macos-catalina-4-gb-136575-v3-large-1.jpg" class="float-right">
+<h1 style="text-align: center;">Customer Support Center</h1>
+<br><br>
+<p style="text-align: center;">Please fill out contact infomation</p>
+
+<form [formGroup] = "MarvellousForm">
+  <div>
+      <label>Name</label>
+      <input [class.is-invalid] = "MarvellousForm.get('name')?.invalid && MarvellousForm.get('name')?.touched" type="text" class="form-control" formControlName="name">
+      <small [class.d-none]="MarvellousForm.get('name')?.valid || MarvellousForm.get('name')?.untouched" class="text-danger">Name is required</small>
+  </div>
+
+
+    <div>
+      <label>Contact No.</label>
+      <input [class.is-invalid] = "MarvellousForm.get('contact')?.invalid && MarvellousForm.get('contact')?.touched" type="text" class="form-control" formControlName="contact">
+      <small [class.d-none]="MarvellousForm.get('contact')?.valid || MarvellousForm.get('contact')?.untouched" class="text-danger">Required field should contain digits only (0-9)</small>
+    </div>
+
+  <div>
+    <label>Email</label>
+    <input [class.is-invalid]="MarvellousForm.get('email')?.invalid && MarvellousForm.get('email')?.touched" type="email" class="form-control" formControlName="email">
+    <small [class.d-none]="MarvellousForm.get('email')?.valid || MarvellousForm.get('email')?.untouched" class="text-danger">Email is required</small>
+  </div>
+
+  <div>
+    <label>City</label>
+    <input [class.is-invalid]="MarvellousForm.get('city')?.invalid && MarvellousForm.get('city')?.touched" type="text" class="form-control" formControlName="city">
+    <small [class.d-none]="MarvellousForm.get('city')?.valid || MarvellousForm.get('city')?.untouched" class="text-danger">City name should contain at least 3 letters</small>
+  </div>
+
+  <div>
+    <label for="sel1">State</label>
+    <select class="form-control" id="sel1">
+      <option>Maharashtra</option>
+      <option>Gujurat</option>
+      <option>Uttar Pradesh</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Zip Code</label>
+    <input [class.is-invalid]="MarvellousForm.get('zipcd')?.invalid && MarvellousForm.get('zipcd')?.touched" type="text" class="form-control" formControlName="zipcd">
+    <small [class.d-none]="MarvellousForm.get('zipcd')?.valid || MarvellousForm.get('zipcd')?.untouched" class="text-danger">Zip Code should contain minimum 5 digits</small>
+  </div>
+
+  <div>
+    <label>Comments
+      <textarea class="form-control" formControlName="comments" cols="40" rows="5" ></textarea>
+    </label>  
+  </div>
+
+  <div class="text-center">
+    <button class="btn btn-primary btn-lg" [disabled]="!MarvellousForm.valid">Submit</button>
+  </div>
+
+</form>
